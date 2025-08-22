@@ -1,0 +1,119 @@
+@use "../../utils" as *;
+
+.tx-breadcrumb-img.faq-breadcrub img {
+  top: -56px;
+  @media #{$xs} {
+    position: relative;
+    top: 0;
+    margin-bottom: -100px;
+  }
+}
+
+.tx-breadcrumb {
+  &.dvir {
+    margin: 0 4px;
+  }
+  &-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @media #{$xs} {
+      height: 100%;
+    }
+    &.pt-200 {
+      @media #{$xs} {
+        padding-top: 130px;
+      }
+    }
+  }
+  &-fan {
+    & img {
+      position: absolute;
+      animation: tx_spin 12s linear infinite;
+      top: 50%;
+    }
+    & .svg-object {
+      position: relative;
+      width: 35rem;
+      height: 35rem;
+      margin-left: 5rem;
+      animation: tx_spin 12s linear infinite;
+      @media #{$max-md} {
+        width: 15rem;
+        height: 15rem;
+        margin-left: 7.5rem;
+      }
+      @media #{$lg} {
+        width: 20rem;
+        height: 20rem;
+        margin-left: 7.5rem;
+      }
+      @media #{$xl} {
+        width: 30rem;
+        height: 30rem;
+        margin-left: 7.5rem;
+      }
+      & svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &-img {
+    & img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: -80px;
+      @media #{$md} {
+        top: -118px;
+      }
+      @media #{$xs} {
+        position: relative;
+        top: 0;
+        margin-bottom: -100px;
+      }
+    }
+  }
+  & p {
+    font-size: 1.125em;
+    color: var(--tx-heading-color);
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  &-list {
+    & span {
+      position: relative;
+      font-size: 0.875em;
+      line-height: 1;
+      padding-right: 1rem;
+      transition: 0.2s;
+      &:hover {
+        color: var(--tx-primary);
+      }
+      &.active {
+        font-weight: 700;
+      }
+      &::before {
+        content: "\f105";
+        font-family: "Font Awesome 6 Pro";
+        font-size: 90%;
+        line-height: inherit;
+        position: absolute;
+        right: 0.125rem;
+        padding-top: 0.05rem;
+        top: 50%;
+        transform: translateY(calc(-50% + 0.1675rem));
+      }
+      &:last-child {
+        padding-right: 0;
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}

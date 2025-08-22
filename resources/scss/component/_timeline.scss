@@ -1,0 +1,61 @@
+@use "../utils" as *;
+
+.tx-timeline {
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  &-img {
+    & > * {
+      overflow: hidden;
+      width: 22%;
+      margin-left: auto;
+      @media #{$mw-xxl} {
+        width: 25%;
+      }
+    }
+  }
+  &-number > * {
+    background-color: var(--tx-secondary);
+    color: var(--tx-primary);
+    font-weight: 700;
+    font-size: 0.9em;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 5rem;
+    text-align: center;
+    border: 3px solid var(--tx-body-bg);
+    box-shadow: 0 0 0 1px var(--tx-secondary);
+  }
+  &:nth-child(odd) {
+    @media #{$mw-md} {
+      & .tx-timeline-content {
+        order: 1;
+        text-align: right;
+      }
+      & .tx-timeline-img {
+        order: 3;
+        & > * {
+          margin-right: auto;
+          margin-left: 0;
+        }
+      }
+      & .tx-timeline-number {
+        order: 2;
+      }
+    }
+  }
+  &-block {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      height: 100%;
+      transform: translateX(-50%);
+      width: 1px;
+      background-color: var(--tx-border-color);
+      z-index: -1;
+    }
+  }
+}

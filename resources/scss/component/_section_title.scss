@@ -1,0 +1,68 @@
+@use "../utils" as *;
+
+.tx-section {
+  &-heading {
+    --tx-section-heading-size: calc(2.75rem + 0.25vw);
+    font-size: var(--tx-section-heading-size);
+    margin-bottom: 1rem;
+    line-height: 1;
+    @media #{$mw-xxl} {
+      --tx-section-heading-size: calc(2.75rem + 1vw);
+    }
+    @media #{$xs} {
+      --tx-section-heading-size: 2.25em;
+    }
+    &-lg {
+      @media #{$mw-lg} {
+        --tx-section-heading-size: calc(2.75rem + 1.5vw);
+      }
+    }
+  }
+  &-description {
+    color: var(--tx-heading-color);
+    font-size: 1.125em;
+    margin: 0;
+  }
+  &-subtitle {
+    margin-bottom: 1rem;
+    font-size: 0.85em;
+    line-height: 1;
+    text-transform: uppercase;
+    display: inline-block;
+    color: var(--tx-heading-color);
+  }
+  &-title {
+    font-size: calc(1.325rem + 1.0125vw);
+    line-height: 1;
+    margin-bottom: 1rem;
+    z-index: 5;
+    & br {
+      @media #{$lg, $md ,$xs} {
+        display: none;
+      }
+    }
+    &-wrapper {
+      margin-bottom: 3.5rem;
+      & p {
+        & br {
+          @media #{$lg,$md,$xs} {
+            display: none;
+          }
+        }
+      }
+      &-description {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 18px;
+        line-height: 28px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.tx-brand {
+  &-title {
+    font-size: 1.25em;
+    margin-bottom: 0;
+  }
+}

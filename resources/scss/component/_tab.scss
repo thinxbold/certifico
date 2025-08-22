@@ -1,0 +1,22 @@
+@use "../utils" as *;
+
+.nav-tabs {
+  --tx-border-radius: 0.75rem;
+  --tx-nav-tabs-border-width: 0;
+  --tx-nav-tabs-link-active-bg: var(--tx-white);
+  --tx-nav-tabs-link-active-color: var(--tx-heading-color);
+  font-size: 0.9em;
+  margin-bottom: 1.25rem;
+  gap: 0.5rem;
+  & .nav-link {
+    background-color: var(--tx-gray-300);
+    border-radius: var(--tx-nav-tabs-border-radius);
+    font-family: var(--tx-heading-font);
+    font-weight: 600;
+    color: var(--tx-gray-600);
+    text-transform: uppercase;
+    &:hover {
+      color: var(--tx-heading-color);
+    }
+  }
+}
